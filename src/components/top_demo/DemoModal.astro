@@ -1,0 +1,61 @@
+---
+---
+
+<div>
+  <div
+    class="w-full h-32 rounded-lg bg-gray-50 flex justify-center items-center mb-6"
+  >
+    <button
+      type="button"
+      class="px-4 py-3 rounded-lg text-white bg-gray-900"
+      data-zl="modal-toggle target-[#demoModal]">Click Modal Button</button
+    >
+  </div>
+  <pre><code class="language-html rounded-lg">&lt;button type=&quot;button&quot; data-zl=&quot;modal-toggle target-[#modal1]&quot;&gt;
+  Modal Open
+&lt;/button&gt;
+&lt;div id=&quot;modal1&quot; data-zl=&quot;modal-backdrop&quot; zl-cloak&gt;
+  &lt;div data-zl=&quot;modal-content move-down-md&quot;&gt;
+    &lt;!-- Content Here --&gt;
+    &lt;button data-zl=&quot;modal-dismiss&quot;&gt;Cancel&lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+  <!-- Modal -->
+  <div
+    id="demoModal"
+    class="z-10 bg-black bg-opacity-20 fixed inset-0 overflow-y-auto flex justify-center"
+    data-zl="modal-backdrop"
+    zl-cloak
+  >
+    <div
+      class="mx-3 mt-32 h-64 w-full max-w-lg bg-white rounded-lg pt-3 pb-6 px-3 flex flex-col items-center"
+      data-zl="modal-content move-down-md"
+    >
+      <div class="w-full flex justify-end items-center">
+        <button data-zl="modal-dismiss">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-6 w-6"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M6 18L18 6M6 6l12 12"></path>
+          </svg>
+        </button>
+      </div>
+      <p class="font-bold text-lg">Modal Here!</p>
+      <div class="p-4 text-gray-500">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+        commodo consequat.
+      </div>
+    </div>
+  </div>
+</div>

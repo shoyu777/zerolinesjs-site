@@ -1,0 +1,16 @@
+---
+import SideMenu from "../../../components/SideMenu.astro";
+import Layout from "../../../layouts/Layout.astro";
+import Header from "../../../components/Header.astro";
+import MainColumn from "../../../layouts/MainColumn.astro";
+---
+
+<Layout title="Welcome to Astro.">
+  <Header />
+  <div class="max-w-screen-lg mx-auto flex space-x-12 py-12">
+    <SideMenu active="Modal" />
+    <MainColumn title="Modal">
+      <p>aaaaa</p>
+    </MainColumn>
+  </div>
+</Layout>

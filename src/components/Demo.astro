@@ -1,0 +1,66 @@
+---
+import DemoDropdown from "./top_demo/DemoDropdown.astro";
+import DemoModal from "./top_demo/DemoModal.astro";
+import DemoTab from "./top_demo/DemoTab.astro";
+---
+
+<div class="w-full bg-white py-10 lg:py-20 lg:px-20">
+  <div class="w-full max-w-screen-md h-full mx-auto">
+    <h3 class="text-4xl font-bold mb-6">Demo</h3>
+    <p class="mb-12 text-gray-500">
+      All you need is attaching rolls and behaviors to your styled elements by
+      using <code class="px-2 py-1 rounded bg-gray-100 text-gray-900"
+        >data-zl</code
+      >.
+    </p>
+    <ul
+      class="grid grid-cols-2 gap-3 md:flex md:justify-start md:items-center md:space-x-4 mb-6"
+      data-zl="tab-list"
+    >
+      <button
+        class="transition w-full md:w-32 py-3 rounded-lg border-2"
+        data-zl="tab-item target-[#tabContent] default active-style-[bg-white border-gray-900] default-style-[bg-gray-50 border-gray-50 text-gray-500 hover:text-gray-600]"
+        >Tab</button
+      >
+      <button
+        class="transition w-full md:w-32 py-3 rounded-lg border-2"
+        data-zl="tab-item target-[#modalContent] active-style-[bg-white border-gray-900] default-style-[bg-gray-50 border-gray-50 text-gray-500 hover:text-gray-600]"
+        >Modal</button
+      >
+      <button
+        class="transition w-full md:w-32 py-3 rounded-lg border-2"
+        data-zl="tab-item target-[#dropdownContent] active-style-[bg-white border-gray-900] default-style-[bg-gray-50 border-gray-50 text-gray-500 hover:text-gray-600]"
+        >Dropdown</button
+      >
+      <a
+        href="/docs/components/modal"
+        class="relative text-center w-full md:w-32 py-3 rounded-lg bg-gray-900 border-2 border-gray-900 text-white"
+        >See More&nbsp;&nbsp;
+        <div class="absolute right-2 top-4">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="2"
+            stroke="currentColor"
+            class="w-4 h-4"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M8.25 4.5l7.5 7.5-7.5 7.5"></path>
+          </svg>
+        </div>
+      </a>
+    </ul>
+    <div id="tabContent" class="transition w-full min-h-[70vh] bg-white">
+      <DemoTab />
+    </div>
+    <div id="modalContent" class="transition w-full min-h-[70vh] bg-white">
+      <DemoModal />
+    </div>
+    <div id="dropdownContent" class="transition w-full min-h-[70vh] bg-white">
+      <DemoDropdown />
+    </div>
+  </div>
+</div>
