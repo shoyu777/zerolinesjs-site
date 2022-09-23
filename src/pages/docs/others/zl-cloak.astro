@@ -1,0 +1,22 @@
+---
+import Header from "../../../components/Header.astro";
+import SideMenu from "../../../components/SideMenu.astro";
+import Layout from "../../../layouts/Layout.astro";
+import MainColumn from "../../../layouts/MainColumn.astro";
+---
+
+<Layout title="zl-cloak | Zerolines.js">
+  <Header />
+  <div class="max-w-screen-lg mx-auto lg:flex lg:space-x-12 py-12">
+    <SideMenu active="zl-cloak" />
+    <MainColumn title="zl-cloak">
+      <p class="text-gray-500 mb-3">
+        <code>zl-cloak</code> is a custom attribute of HTML only for hiding a block
+        of HTML until after Zerolines.js is finished initializing.
+      </p>
+      <p class="text-gray-500">
+        By using this, you can avoid blinking of content when HTML loaded.
+      </p>
+    </MainColumn>
+  </div>
+</Layout>

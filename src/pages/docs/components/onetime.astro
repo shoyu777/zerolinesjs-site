@@ -1,0 +1,72 @@
+---
+import SideMenu from "../../../components/SideMenu.astro";
+import Layout from "../../../layouts/Layout.astro";
+import Header from "../../../components/Header.astro";
+import MainColumn from "../../../layouts/MainColumn.astro";
+---
+
+<Layout title="OneTime | Zerolines.js">
+  <Header />
+  <div class="max-w-screen-lg mx-auto lg:flex lg:space-x-12 py-12">
+    <SideMenu active="OneTime" />
+    <MainColumn title="OneTime">
+      <p class="mb-6">
+        Component to show only one time when HTML loaded. After user click
+        dismiss button, component will not be shown until specified time
+        expired. The specified time is stored in Local Storage.
+      </p>
+      <h4 class="text-gray-900 font-bold text-xl mb-3">Basic Structure</h4>
+      <p class="mb-6">
+        OneTime component requires <code>one-time</code>, dismiss trigger
+        target. Default expired time is 31536000 seconds(365 days).
+      </p>
+      <div class="mb-6">
+        <pre><code class="language-html rounded-lg">&lt;div data-zl=&quot;one-time trigger-[#dissmissButtonId] expire-seconds-[20]&quot; zl-cloak&gt;
+  &lt;!-- OneTime Content Here --&gt;
+  &lt;button id=&quot;dissmissButtonId&quot; type=&quot;button&quot;&gt;Dismiss button&lt;/button&gt;
+&lt;/div&gt;
+</code></pre>
+      </div>
+      <h4 class="text-gray-900 font-bold text-xl mb-3">one-time</h4>
+      <p class="mb-3">
+        <code>one-time</code> needs a target element to dismiss.
+      </p>
+      <table class="bg-gray-50 table-auto w-full mb-6">
+        <thead class="h-12 text-left bg-gray-100">
+          <th class="px-3 w-48">Item</th>
+          <th class="px-3">Description</th>
+        </thead>
+        <tbody>
+          <tr class="h-16">
+            <td class="p-3"
+              ><p>target-[SELECTOR]</p><p class="font-bold">*required</p>
+            </td>
+            <td class="p-3"
+              ><p>
+                Specify the target element to be toggled. Put a CSS selector
+                value between [ and ]. Double Quatation is not required. The
+                target must be only one element.
+              </p><p class="font-bold mt-2">Example</p><p>
+                <code>one-time target-[#dissmissButtonId]</code>
+              </p>
+            </td>
+          </tr>
+          <tr class="h-16">
+            <td class="p-3"
+              ><p>expire-seconds-[SECONDS]</p><p>(optional)</p>
+            </td>
+            <td class="p-3"
+              ><p>Specify the expired seconds.</p><p class="font-bold mt-2">
+                Example
+              </p><p>
+                <code
+                  >one-time target-[#dissmissButtonId] expire-seconds-[3600]</code
+                >
+              </p>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </MainColumn>
+  </div>
+</Layout>

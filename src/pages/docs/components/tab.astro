@@ -1,0 +1,130 @@
+---
+import SideMenu from "../../../components/SideMenu.astro";
+import Layout from "../../../layouts/Layout.astro";
+import Header from "../../../components/Header.astro";
+import MainColumn from "../../../layouts/MainColumn.astro";
+---
+
+<Layout title="Tab | Zerolines.js">
+  <Header />
+  <div class="max-w-screen-lg mx-auto lg:flex lg:space-x-12 py-12">
+    <SideMenu active="Tab" />
+    <MainColumn title="Tab">
+      <h4 class="text-gray-900 font-bold text-xl mb-6">Basic Structure</h4>
+      <p class="mb-6">
+        Tab component requires <code>tab-list</code> and its children <code
+          >tab-item</code
+        >. Each <code>tab-item</code> must have target element to be toggled. You
+        don't need to hide the tab contents by CSS, as Zerolines.js automatically
+        hides it.
+      </p>
+      <div class="mb-6">
+        <pre><code class="language-html rounded-lg">&lt;div data-zl=&quot;tab-list&quot;&gt;
+  &lt;button type=&quot;button&quot; data-zl=&quot;tab-item target-[#tab1] default active-style-[activeClass] default-style-[defaultClass]&quot;&gt;
+    Tab 1
+  &lt;/button&gt;
+  &lt;button type=&quot;button&quot; data-zl=&quot;tab-item target-[#tab2] active-style-[activeClass] default-style-[defaultClass]&quot;&gt;
+    Tab 2
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;div id=&quot;tab1&quot;&gt;
+  &lt;!-- Tab1 Content Here --&gt;
+&lt;/div&gt;
+&lt;div id=&quot;tab2&quot; zl-cloak&gt;
+  &lt;!-- Tab2 Content Here --&gt;
+&lt;/div&gt;</code></pre>
+      </div>
+      <h4 class="text-gray-900 font-bold text-xl mb-3">tab-list</h4>
+      <p class="mb-3">
+        tab-list has a role to group tab-items to switch style and display
+        status.
+      </p>
+      <table class="bg-gray-50 table-auto w-full mb-6">
+        <thead class="h-12 text-left bg-gray-100">
+          <th class="px-3 w-48">Item</th>
+          <th class="px-3">Description</th>
+        </thead>
+        <tbody> </tbody>
+        <tr class="h-16">
+          <td class="p-3"><p>-</p></td>
+          <td class="p-3"><p>-</p></td>
+        </tr>
+      </table>
+      <h4 class="text-gray-900 font-bold text-xl mb-3">tab-item</h4>
+      <p class="mb-3">
+        Each tab-item is must be a child of tab-list. One of the tab-item should
+        have <code>default</code> option to show as initial content when HTML loaded.
+      </p>
+      <table class="bg-gray-50 table-auto w-full mb-6">
+        <thead class="h-12 text-left bg-gray-100">
+          <th class="px-3 w-48">Item</th>
+          <th class="px-3">Description</th>
+        </thead>
+        <tbody>
+          <tr class="h-16">
+            <td class="p-3"
+              ><p>target-[SELECTOR]</p><p class="font-bold">*required</p>
+            </td>
+            <td class="p-3"
+              ><p>
+                Specify the target element to open. Put a CSS selector value
+                between [ and ]. Double Quatation is not required. The target
+                must be only one element.
+              </p><p class="font-bold mt-2">Example</p><p>
+                <code>tab-item target-[#targetId]</code>
+              </p>
+            </td>
+          </tr>
+          <tr class="h-16">
+            <td class="p-3"
+              ><p>default</p><p class="font-bold">(optional)</p>
+            </td>
+            <td class="p-3"
+              ><p>
+                If a tab-item element has this <code>default</code>, target tab
+                content will be active with <code>active-style</code> when HTML loaded.
+              </p><p class="font-bold mt-2">Example</p><p>
+                <code>tab-item target-[#targetId] default</code>
+              </p>
+            </td>
+          </tr>
+          <tr class="h-16">
+            <td class="p-3"
+              ><p>active-style-[CSS_CLASS_LIST]</p><p class="font-bold">
+                (optional)
+              </p>
+            </td>
+            <td class="p-3"
+              ><p>
+                Put one or more class(separated by space) for active tab. When
+                the tab-item active, specified <code>active-style</code> will be
+                added to classList of HTML Element. When the tab-item inactive, <code
+                  >active-style</code
+                > will be removed.
+              </p><p class="font-bold mt-2">Example</p><p>
+                <code>active-style-[font-bold text-red-600]</code>
+              </p>
+            </td>
+          </tr>
+          <tr class="h-16">
+            <td class="p-3"
+              ><p>default-style-[CSS_CLASS_LIST]</p><p class="font-bold">
+                (optional)
+              </p>
+            </td>
+            <td class="p-3"
+              ><p>
+                Put one or more class(separated by space) for inactive tab. When
+                the tab-item inactive, specified <code>default-style</code> will
+                be added to classList of HTML Element. When the tab-item active,
+                <code>default-style</code> will be removed.
+              </p><p class="font-bold mt-2">Example</p><p>
+                <code>default-style-[text-gray-500]</code>
+              </p>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </MainColumn>
+  </div>
+</Layout>

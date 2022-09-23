@@ -1,0 +1,70 @@
+---
+import SideMenu from "../../../components/SideMenu.astro";
+import Layout from "../../../layouts/Layout.astro";
+import Header from "../../../components/Header.astro";
+import MainColumn from "../../../layouts/MainColumn.astro";
+---
+
+<Layout title="ScrollTop | Zerolines.js">
+  <Header />
+  <div class="max-w-screen-lg mx-auto lg:flex lg:space-x-12 py-12">
+    <SideMenu active="ScrollTop" />
+    <MainColumn title="ScrollTop">
+      <h4 class="text-gray-900 font-bold text-xl mb-6">Basic Structure</h4>
+      <p class="mb-6">
+        ScrollTop component requires <code>scroll-top</code>.
+      </p>
+      <div class="mb-6">
+        <pre><code class="language-html rounded-lg">&lt;button data-zl=&quot;scroll-top toggle-at-[300] speedy&quot;&gt;Button&lt;/button&gt;
+</code></pre>
+      </div>
+      <h4 class="text-gray-900 font-bold text-xl mb-3">scroll-top</h4>
+      <p class="mb-6">Default scroll back duration is 300ms.</p>
+      <table class="bg-gray-50 table-auto w-full mb-6">
+        <thead class="h-12 text-left bg-gray-100">
+          <th class="px-3 w-48">Item</th>
+          <th class="px-3">Description</th>
+        </thead>
+        <tbody>
+          <tr class="h-16">
+            <td class="p-3"
+              ><p>toggle-at-[SCROLL_AMOUNT]</p><p>(optional)</p>
+            </td>
+            <td class="p-3"
+              ><p>
+                Specify a scroll aount(number) between [ and ] where to show the
+                button. Double Quatation is not required.
+              </p><p class="font-bold mt-2">Example</p><p>
+                <code>scroll-top toggle-at-[300]</code>
+              </p>
+            </td>
+          </tr>
+          <tr class="h-12 bg-gray-100">
+            <td class="p-3 font-bold"><p>Scroll Back Speed</p></td>
+            <td class="p-3"> </td>
+          </tr>
+          <tr class="h-16">
+            <td class="p-3"><p>quickly</p><p>(optional)</p></td>
+            <td class="p-3"
+              ><p>Scroll Back quickly(100ms).</p><p class="font-bold mt-2">
+                Example
+              </p><p>
+                <code>scroll-top toggle-at-[300] quickly</code>
+              </p>
+            </td>
+          </tr>
+          <tr class="h-16">
+            <td class="p-3"><p>slowly</p><p>(optional)</p></td>
+            <td class="p-3"
+              ><p>Scroll Back slowly(500ms).</p><p class="font-bold mt-2">
+                Example
+              </p><p>
+                <code>scroll-top toggle-at-[300] slowly</code>
+              </p>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </MainColumn>
+  </div>
+</Layout>

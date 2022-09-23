@@ -1,0 +1,57 @@
+---
+import SideMenu from "../../../components/SideMenu.astro";
+import Layout from "../../../layouts/Layout.astro";
+import Header from "../../../components/Header.astro";
+import MainColumn from "../../../layouts/MainColumn.astro";
+---
+
+<Layout title="Dropdown | Zerolines.js">
+  <Header />
+  <div class="max-w-screen-lg mx-auto lg:flex lg:space-x-12 py-12">
+    <SideMenu active="Dropdown" />
+    <MainColumn title="Dropdown">
+      <h4 class="text-gray-900 font-bold text-xl mb-6">Basic Structure</h4>
+      <p class="mb-6">
+        Dropdown component requires only <code>dropdown-toggle</code> and its target.
+        You don't need to hide the dropdown menu by CSS, as Zerolines.js automatically
+        hides it.
+      </p>
+      <div class="mb-6">
+        <pre><code class="language-html rounded-lg">&lt;!-- You may need relative/absolute position to the elements --&gt;
+&lt;button type=&quot;button&quot; data-zl=&quot;dropdown-toggle target-[#dropdown1]&quot;&gt;
+  Dropdown Button
+&lt;/button&gt;
+&lt;ul id=&quot;dropdown1&quot; zl-cloak&gt;
+  &lt;!-- List Content Here --&gt;
+&lt;/ul&gt;
+</code></pre>
+      </div>
+      <h4 class="text-gray-900 font-bold text-xl mb-3">dropdown-toggle</h4>
+      <p class="mb-3">
+        <code>dropdown-toggle</code> needs only a target element to be toggled.
+      </p>
+      <table class="bg-gray-50 table-auto w-full mb-6">
+        <thead class="h-12 text-left bg-gray-100">
+          <th class="px-3 w-48">Item</th>
+          <th class="px-3">Description</th>
+        </thead>
+        <tbody>
+          <tr class="h-16">
+            <td class="p-3"
+              ><p>target-[SELECTOR]</p><p class="font-bold">*required</p>
+            </td>
+            <td class="p-3"
+              ><p>
+                Specify the target element to be toggled. Put a CSS selector
+                value between [ and ]. Double Quatation is not required. The
+                target must be only one element.
+              </p><p class="font-bold mt-2">Example</p><p>
+                <code>dropdown-toggle target-[#targetId]</code>
+              </p>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </MainColumn>
+  </div>
+</Layout>

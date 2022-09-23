@@ -3,11 +3,11 @@
 
 <div>
   <div
-    class="w-full h-32 rounded-lg bg-gray-50 flex justify-center items-center mb-6"
+    class="w-full h-40 rounded-lg bg-gray-50 flex justify-center items-center mb-6"
   >
     <button
       type="button"
-      class="px-4 py-3 rounded-lg text-white bg-gray-900"
+      class="w-48 px-4 py-3 rounded-lg text-white bg-gray-900"
       data-zl="modal-toggle target-[#demoModal]">Click Modal Button</button
     >
   </div>
@@ -33,7 +33,10 @@
       data-zl="modal-content move-down-md"
     >
       <div class="w-full flex justify-end items-center">
-        <button data-zl="modal-dismiss">
+        <button
+          data-zl="modal-dismiss"
+          class="p-2 rounded-lg hover:bg-gray-100"
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             class="h-6 w-6"
@@ -49,12 +52,14 @@
           </svg>
         </button>
       </div>
-      <p class="font-bold text-lg">Modal Here!</p>
+      <p class="font-bold text-2xl">Modal Here!</p>
       <div class="p-4 text-gray-500">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-        commodo consequat.
+        <ul class="list-disc list-outside ml-4">
+          <li>
+            Dismiss by clicking outside of modal content or dismiss button.
+          </li>
+          <li>Scroll lock by default.</li>
+        </ul>
       </div>
     </div>
   </div>

@@ -1,0 +1,23 @@
+---
+import Header from "../../../components/Header.astro";
+import SideMenu from "../../../components/SideMenu.astro";
+import Layout from "../../../layouts/Layout.astro";
+import MainColumn from "../../../layouts/MainColumn.astro";
+---
+
+<Layout title="mutation observer | Zerolines.js">
+  <Header />
+  <div class="max-w-screen-lg mx-auto lg:flex lg:space-x-12 py-12">
+    <SideMenu active="mutation-observer" />
+    <MainColumn title="mutation observer">
+      <p class="text-gray-500 mb-3">
+        Zerolines.js is using <a
+          href="https://developer.mozilla.org/en-US/docs/Web/API/MutationObserver"
+          target="_blank"
+          class="underline hover:text-gray-900">mutation observer</a
+        > to watch for changing DOM tree, so that Zerolines.js can add EventListeners
+        to the added elements even if it is after the Document loaded.
+      </p>
+    </MainColumn>
+  </div>
+</Layout>

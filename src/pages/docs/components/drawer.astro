@@ -1,0 +1,145 @@
+---
+import SideMenu from "../../../components/SideMenu.astro";
+import Layout from "../../../layouts/Layout.astro";
+import Header from "../../../components/Header.astro";
+import MainColumn from "../../../layouts/MainColumn.astro";
+---
+
+<Layout title="Drawer | Zerolines.js">
+  <Header />
+  <div class="max-w-screen-lg mx-auto lg:flex lg:space-x-12 py-12">
+    <SideMenu active="Drawer" />
+    <MainColumn title="Drawer">
+      <h4 class="text-gray-900 font-bold text-xl mb-6">Basic Structure</h4>
+      <p class="mb-6">
+        Drawer component requires <code>drawer-toggle</code>,
+        <code>drawer-content</code>, and <code>drawer-backdrop</code>. You don't
+        need to hide the drawer window by CSS, as Zerolines.js automatically
+        hides it.
+      </p>
+      <div class="mb-6">
+        <pre><code class="language-html rounded-lg">&lt;button type=&quot;button&quot; data-zl=&quot;drawer-toggle target-[#drawer1]&quot;&gt;
+  Drawer Button
+&lt;/button&gt;
+&lt;div id=&quot;drawer1&quot; zl-cloak&gt;
+  &lt;nav data-zl=&quot;drawer-content drawer-right&quot;&gt;
+    &lt;button type=&quot;button&quot; data-zl=&quot;drawer-dismiss&quot;&gt;Dismiss Button&lt;/button&gt;
+    &lt;!-- Drawer Content Here --&gt;
+  &lt;/nav&gt;
+  &lt;div data-zl=&quot;drawer-backdrop&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+      </div>
+      <h4 class="text-gray-900 font-bold text-xl mb-3">drawer-toggle</h4>
+      <p class="mb-3">
+        <code>drawer-toggle</code> needs a target element to be toggled.
+      </p>
+      <table class="bg-gray-50 table-auto w-full mb-6">
+        <thead class="h-12 text-left bg-gray-100">
+          <th class="px-3 w-48">Item</th>
+          <th class="px-3">Description</th>
+        </thead>
+        <tbody>
+          <tr class="h-16">
+            <td class="p-3"
+              ><p>target-[SELECTOR]</p><p class="font-bold">*required</p>
+            </td>
+            <td class="p-3"
+              ><p>
+                Specify the target element to be toggled. Put a CSS selector
+                value between [ and ]. Double Quatation is not required. The
+                target must be only one element.
+              </p><p class="font-bold mt-2">Example</p><p>
+                <code>drawer-toggle target-[#targetId]</code>
+              </p>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <h4 class="text-gray-900 font-bold text-xl mb-3">drawer-content</h4>
+      <p class="mb-3">
+        <code>drawer-content</code> needs a direction from where to be drawn. <code
+          >drawer-right</code
+        > is set by default.
+      </p>
+      <table class="bg-gray-50 table-auto w-full mb-6">
+        <thead class="h-12 text-left bg-gray-100">
+          <th class="px-3 w-48">Item</th>
+          <th class="px-3">Description</th>
+        </thead>
+        <tbody>
+          <tr class="h-12 bg-gray-100">
+            <td class="p-3 font-bold"><p>Drawer Direction</p></td>
+            <td class="p-3"> </td>
+          </tr>
+          <tr class="h-16">
+            <td class="p-3"><p>drawer-right</p><p>(optional)</p></td>
+            <td class="p-3"
+              ><p>Drawer is shown from right.</p><p class="font-bold mt-2">
+                Example
+              </p><p>
+                <code>drawer-content drawer-right</code>
+              </p>
+            </td>
+          </tr>
+          <tr class="h-16">
+            <td class="p-3"><p>drawer-left</p><p>(optional)</p></td>
+            <td class="p-3"
+              ><p>Drawer is shown from left.</p><p class="font-bold mt-2">
+                Example
+              </p><p>
+                <code>drawer-content drawer-left</code>
+              </p>
+            </td>
+          </tr>
+          <tr class="h-16">
+            <td class="p-3"><p>drawer-top</p><p>(optional)</p></td>
+            <td class="p-3"
+              ><p>Drawer is shown from top.</p><p class="font-bold mt-2">
+                Example
+              </p><p>
+                <code>drawer-content drawer-top</code>
+              </p>
+            </td>
+          </tr>
+          <tr class="h-12 bg-gray-100">
+            <td class="p-3 font-bold"><p>Drawer Speed</p></td>
+            <td class="p-3"> </td>
+          </tr>
+          <tr class="h-16">
+            <td class="p-3"><p>quickly</p><p></p><p>(optional)</p></td>
+            <td class="p-3"
+              ><p>Drawer animation as quick speed.(100ms)</p><p
+                class="font-bold mt-2"
+              >
+                Example
+              </p><p>
+                <code>drawer-content drawer-left quickly</code>
+              </p>
+            </td>
+          </tr>
+          <tr class="h-16">
+            <td class="p-3"><p>slowly</p><p></p><p>(optional)</p></td>
+            <td class="p-3"
+              ><p>Drawer animation as slow speed.(500ms)</p><p
+                class="font-bold mt-2"
+              >
+                Example
+              </p><p>
+                <code>drawer-content slowly</code>
+              </p>
+            </td>
+          </tr>
+          <tr class="h-16">
+            <td class="p-3"><p>no-animation</p><p></p><p>(optional)</p></td>
+            <td class="p-3"
+              ><p>No animation.(0ms)</p><p class="font-bold mt-2">Example</p><p>
+                <code>drawer-content no-animation</code>
+              </p>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </MainColumn>
+  </div>
+</Layout>

@@ -5,12 +5,340 @@ import Header from "../../../components/Header.astro";
 import MainColumn from "../../../layouts/MainColumn.astro";
 ---
 
-<Layout title="Welcome to Astro.">
+<Layout title="Modal | Zerolines.js">
   <Header />
-  <div class="max-w-screen-lg mx-auto flex space-x-12 py-12">
+  <div class="max-w-screen-lg mx-auto lg:flex lg:space-x-12 py-12">
     <SideMenu active="Modal" />
     <MainColumn title="Modal">
-      <p>aaaaa</p>
+      <h4 class="text-gray-900 font-bold text-xl mb-6">Basic Structure</h4>
+      <p class="mb-6">
+        Modal component requires <code>modal-toggle</code>, <code
+          >modal-backdrop</code
+        >, and <code>modal-content</code> like as below. You don't need to hide the
+        modal window by CSS, as Zerolines.js automatically hides it. <code
+          >modal-dismiss</code
+        > is optional.
+      </p>
+      <div class="mb-6">
+        <pre><code class="language-html rounded-lg">&lt;button type=&quot;button&quot; data-zl=&quot;modal-toggle target-[#modal1]&quot;&gt;
+  Modal Open
+&lt;/button&gt;
+&lt;div id=&quot;modal1&quot; data-zl=&quot;modal-backdrop&quot; zl-cloak&gt;
+  &lt;div data-zl=&quot;modal-content move-down-md&quot;&gt;
+    &lt;!-- Content Here --&gt;
+    &lt;button data-zl=&quot;modal-dismiss&quot;&gt;Cancel&lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+      </div>
+      <h4 class="text-gray-900 font-bold text-xl mb-3">modal-toggle</h4>
+      <table class="bg-gray-50 table-auto w-full mb-6">
+        <thead class="h-12 text-left bg-gray-100">
+          <th class="px-3 w-48">Item</th>
+          <th class="px-3">Description</th>
+        </thead>
+        <tbody>
+          <tr class="h-16">
+            <td class="p-3"
+              ><p>target-[SELECTOR]</p><p class="font-bold">*required</p>
+            </td>
+            <td class="p-3"
+              ><p>
+                Specify the target element to open. Put a CSS selector value
+                between [ and ]. Double Quatation is not required. The target
+                must be only one element.
+              </p><p class="font-bold mt-2">Example</p><p>
+                <code>modal-toggle target-[#targetElementId]</code>
+              </p>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <h4 class="text-gray-900 font-bold text-xl mb-3">modal-backdrop</h4>
+      <p class="mb-3">
+        modal-backdrop is the background of modal-content. modal-backdrop must
+        be a child(or descendant) or same element of the target element that is
+        specified by modal-toggle option. It's fade in/out with comfortable
+        speed(300ms) by default. If you put a fade speed option to <code
+          >modal-content</code
+        >, this fading speed will be over written.
+      </p>
+      <table class="bg-gray-50 table-auto w-full mb-6">
+        <thead class="h-12 text-left bg-gray-100">
+          <th class="px-3 w-48">Item</th>
+          <th class="px-3">Description</th>
+        </thead>
+        <tbody> </tbody>
+        <tr class="h-16">
+          <td class="p-3"><p>-</p></td>
+          <td class="p-3"><p>-</p></td>
+        </tr>
+      </table>
+      <h4 class="text-gray-900 font-bold text-xl mb-3">modal-content</h4>
+      <p class="mb-3">
+        modal-content must be a child(or descendant) element of the target
+        element that is specified by modal-toggle option. Fade speed, move
+        direction, and zooming are able to put in modal-content option. It's
+        fade in/out with comfortable speed(300ms) by default.
+      </p>
+      <p class="mb-3">
+        <code>move</code> and <code>zoom</code> cannot be used at the same time.
+      </p>
+      <table class="bg-gray-50 table-auto w-full mb-6">
+        <thead class="h-12 text-left bg-gray-100">
+          <th class="px-3 w-48">Item</th>
+          <th class="px-3">Description</th>
+        </thead>
+        <tbody>
+          <tr class="h-12 bg-gray-100">
+            <td class="p-3 font-bold"><p>Fade Speed</p></td>
+            <td class="p-3"> </td>
+          </tr>
+          <tr class="h-16">
+            <td class="p-3"><p>quickly</p><p>(optional)</p></td>
+            <td class="p-3"
+              ><p>Fade in/out as quick speed.(100ms)</p><p
+                class="font-bold mt-2"
+              >
+                Example
+              </p><p>
+                <code>modal-backdrop quickly</code>
+              </p>
+            </td>
+          </tr>
+          <tr class="h-16">
+            <td class="p-3"><p>slowly</p><p>(optional)</p></td>
+            <td class="p-3"
+              ><p>Fade in/out as slow speed.(500ms)</p><p
+                class="font-bold mt-2"
+              >
+                Example
+              </p><p>
+                <code>modal-backdrop slowly</code>
+              </p>
+            </td>
+          </tr>
+          <tr class="h-16">
+            <td class="p-3"><p>no-animation</p><p>(optional)</p></td>
+            <td class="p-3"
+              ><p>No fading.(0ms)</p><p class="font-bold mt-2">Example</p><p>
+                <code>modal-backdrop no-animation</code>
+              </p>
+            </td>
+          </tr>
+          <tr class="h-12 bg-gray-100">
+            <td class="p-3 font-bold"><p>Move Direction</p></td>
+            <td class="p-3"> </td>
+          </tr>
+          <tr class="h-16">
+            <td class="p-3"><p>move-down-sm</p><p>(optional)</p></td>
+            <td class="p-3"
+              ><p>
+                Move down when fading in, move up when fading out, with small
+                moving distance.
+              </p><p class="font-bold mt-2">Example</p><p>
+                <code>modal-content move-down-sm</code>
+              </p>
+            </td>
+          </tr>
+          <tr class="h-16">
+            <td class="p-3"><p>move-down-md</p><p>(optional)</p></td>
+            <td class="p-3"
+              ><p>
+                Move down when fading in, move up when fading out, with medium
+                moving distance.
+              </p><p class="font-bold mt-2">Example</p><p>
+                <code>modal-content move-down-md</code>
+              </p>
+            </td>
+          </tr>
+          <tr class="h-16">
+            <td class="p-3"><p>move-down-lg</p><p>(optional)</p></td>
+            <td class="p-3"
+              ><p>
+                Move down when fading in, move up when fading out, with large
+                moving distance.
+              </p><p class="font-bold mt-2">Example</p><p>
+                <code>modal-content move-down-lg</code>
+              </p>
+            </td>
+          </tr>
+          <tr class="h-16">
+            <td class="p-3"><p>move-up-sm</p><p>(optional)</p></td>
+            <td class="p-3"
+              ><p>
+                Move up when fading in, move down when fading out, with small
+                moving distance.
+              </p><p class="font-bold mt-2">Example</p><p>
+                <code>modal-content move-up-sm</code>
+              </p>
+            </td>
+          </tr>
+          <tr class="h-16">
+            <td class="p-3"><p>move-up-md</p><p>(optional)</p></td>
+            <td class="p-3"
+              ><p>
+                Move up when fading in, move down when fading out, with medium
+                moving distance.
+              </p><p class="font-bold mt-2">Example</p><p>
+                <code>modal-content move-up-md</code>
+              </p>
+            </td>
+          </tr>
+          <tr class="h-16">
+            <td class="p-3"><p>move-up-lg</p><p>(optional)</p></td>
+            <td class="p-3"
+              ><p>
+                Move up when fading in, move down when fading out, with large
+                moving distance.
+              </p><p class="font-bold mt-2">Example</p><p>
+                <code>modal-content move-up-lg</code>
+              </p>
+            </td>
+          </tr>
+          <tr class="h-16">
+            <td class="p-3"><p>move-right-sm</p><p>(optional)</p></td>
+            <td class="p-3"
+              ><p>
+                Move right when fading in, move left when fading out, with small
+                moving distance.
+              </p><p class="font-bold mt-2">Example</p><p>
+                <code>modal-content move-right-sm</code>
+              </p>
+            </td>
+          </tr>
+          <tr class="h-16">
+            <td class="p-3"><p>move-right-md</p><p>(optional)</p></td>
+            <td class="p-3"
+              ><p>
+                Move right when fading in, move left when fading out, with
+                medium moving distance.
+              </p><p class="font-bold mt-2">Example</p><p>
+                <code>modal-content move-right-md</code>
+              </p>
+            </td>
+          </tr>
+          <tr class="h-16">
+            <td class="p-3"><p>move-right-lg</p><p>(optional)</p></td>
+            <td class="p-3"
+              ><p>
+                Move right when fading in, move left when fading out, with large
+                moving distance.
+              </p><p class="font-bold mt-2">Example</p><p>
+                <code>modal-content move-right-lg</code>
+              </p>
+            </td>
+          </tr>
+          <tr class="h-16">
+            <td class="p-3"><p>move-left-sm</p><p>(optional)</p></td>
+            <td class="p-3"
+              ><p>
+                Move left when fading in, move right when fading out, with small
+                moving distance.
+              </p><p class="font-bold mt-2">Example</p><p>
+                <code>modal-content move-left-sm</code>
+              </p>
+            </td>
+          </tr>
+          <tr class="h-16">
+            <td class="p-3"><p>move-left-md</p><p>(optional)</p></td>
+            <td class="p-3"
+              ><p>
+                Move left when fading in, move right when fading out, with
+                medium moving distance.
+              </p><p class="font-bold mt-2">Example</p><p>
+                <code>modal-content move-left-md</code>
+              </p>
+            </td>
+          </tr>
+          <tr class="h-16">
+            <td class="p-3"><p>move-left-lg</p><p>(optional)</p></td>
+            <td class="p-3"
+              ><p>
+                Move left when fading in, move right when fading out, with large
+                moving distance.
+              </p><p class="font-bold mt-2">Example</p><p>
+                <code>modal-content move-left-lg</code>
+              </p>
+            </td>
+          </tr>
+          <tr class="h-12 bg-gray-100">
+            <td class="p-3 font-bold"><p>Zooming</p></td>
+            <td class="p-3"> </td>
+          </tr>
+          <tr class="h-16">
+            <td class="p-3"><p>zoom-in-sm</p><p>(optional)</p></td>
+            <td class="p-3"
+              ><p>
+                zoom-in when fading in, zoom-out when fading out, with small
+                change.
+              </p><p class="font-bold mt-2">Example</p><p>
+                <code>modal-content zoom-in-sm</code>
+              </p>
+            </td>
+          </tr>
+          <tr class="h-16">
+            <td class="p-3"><p>zoom-in-md</p><p>(optional)</p></td>
+            <td class="p-3"
+              ><p>
+                zoom-in when fading in, zoom-out when fading out, with medium
+                change.
+              </p><p class="font-bold mt-2">Example</p><p>
+                <code>modal-content zoom-in-md</code>
+              </p>
+            </td>
+          </tr>
+          <tr class="h-16">
+            <td class="p-3"><p>zoom-in-lg</p><p>(optional)</p></td>
+            <td class="p-3"
+              ><p>
+                zoom-in when fading in, zoom-out when fading out, with large
+                change.
+              </p><p class="font-bold mt-2">Example</p><p>
+                <code>modal-content zoom-in-lg</code>
+              </p>
+            </td>
+          </tr>
+          <tr class="h-16">
+            <td class="p-3"><p>zoom-out-sm</p><p>(optional)</p></td>
+            <td class="p-3"
+              ><p>
+                zoom-out when fading in, zoom-in when fading out, with small
+                change.
+              </p><p class="font-bold mt-2">Example</p><p>
+                <code>modal-content zoom-out-sm</code>
+              </p>
+            </td>
+          </tr>
+          <tr class="h-16">
+            <td class="p-3"><p>zoom-out-md</p><p>(optional)</p></td>
+            <td class="p-3"
+              ><p>
+                zoom-out when fading in, zoom-in when fading out, with medium
+                change.
+              </p><p class="font-bold mt-2">Example</p><p>
+                <code>modal-content zoom-out-md</code>
+              </p>
+            </td>
+          </tr>
+          <tr class="h-16">
+            <td class="p-3"><p>zoom-out-lg</p><p>(optional)</p></td>
+            <td class="p-3"
+              ><p>
+                zoom-out when fading in, zoom-in when fading out, with large
+                change.
+              </p><p class="font-bold mt-2">Example</p><p>
+                <code>modal-content zoom-out-lg</code>
+              </p>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <h4 class="text-gray-900 font-bold text-xl mb-3">modal-dismiss</h4>
+      <p class="mb-3">
+        modal-dismiss closes the target element that specified by modal-toggle
+        option.
+      </p>
     </MainColumn>
   </div>
 </Layout>
