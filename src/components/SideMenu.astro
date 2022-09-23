@@ -1,4 +1,6 @@
 ---
+import SideMenuContent from "./SideMenuContent.astro";
+
 export interface Props {
   active: string;
 }
@@ -7,108 +9,7 @@ const { active } = Astro.props;
 ---
 
 <aside class="hidden lg:block shrink-0 w-72">
-  <div class="sticky top-6 bg-gray-50 rounded-lg p-4 space-y-12">
-    <div>
-      <h3 class="font-bold mb-3 text-gray-500">GETTING STARTED</h3>
-      <ul class="flex flex-col space-y-3">
-        <li>
-          <a
-            href="/docs/getting-started"
-            class={active === "Introduction"
-              ? "font-bold underline"
-              : "hover:underline"}>Introduction</a
-          >
-        </li>
-        <li>
-          <a
-            href="/docs/download"
-            class={active === "Download"
-              ? "font-bold underline"
-              : "hover:underline"}>Download</a
-          >
-        </li>
-        <li>
-          <a
-            href="/docs/license"
-            class={active === "License"
-              ? "font-bold underline"
-              : "hover:underline"}>License</a
-          >
-        </li>
-      </ul>
-    </div>
-    <div>
-      <h3 class="font-bold mb-3 text-gray-500">COMPONENTS</h3>
-      <ul class="flex flex-col space-y-3">
-        <li>
-          <a
-            href="/docs/components/modal"
-            class={active === "Modal"
-              ? "font-bold underline"
-              : "hover:underline"}>Modal</a
-          >
-        </li>
-        <li>
-          <a
-            href="/docs/components/tab"
-            class={active === "Tab" ? "font-bold underline" : "hover:underline"}
-            >Tab</a
-          >
-        </li>
-        <li>
-          <a
-            href="/docs/components/dropdown"
-            class={active === "Dropdown"
-              ? "font-bold underline"
-              : "hover:underline"}>Dropdown</a
-          >
-        </li>
-        <li>
-          <a
-            href="/docs/components/drawer"
-            class={active === "Drawer"
-              ? "font-bold underline"
-              : "hover:underline"}>Drawer</a
-          >
-        </li>
-        <li>
-          <a
-            href="/docs/components/onetime"
-            class={active === "OneTime"
-              ? "font-bold underline"
-              : "hover:underline"}>OneTime</a
-          >
-        </li>
-        <li>
-          <a
-            href="/docs/components/scrolltop"
-            class={active === "ScrollTop"
-              ? "font-bold underline"
-              : "hover:underline"}>ScrollTop</a
-          >
-        </li>
-      </ul>
-    </div>
-    <div>
-      <h3 class="font-bold mb-3 text-gray-500">OTHER SPECIFICATION</h3>
-      <ul class="flex flex-col space-y-3">
-        <li>
-          <a
-            href="/docs/others/zl-cloak"
-            class={active === "zl-cloak"
-              ? "font-bold underline"
-              : "hover:underline"}>zl-cloak</a
-          >
-        </li>
-        <li>
-          <a
-            href="/docs/others/mutation-observer"
-            class={active === "mutation-observer"
-              ? "font-bold underline"
-              : "hover:underline"}>mutation observer</a
-          >
-        </li>
-      </ul>
-    </div>
+  <div class="sticky top-6 bg-gray-50 rounded-lg p-4 space-y-10">
+    <SideMenuContent active={active} />
   </div>
 </aside>

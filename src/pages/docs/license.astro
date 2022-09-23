@@ -5,13 +5,17 @@ import Layout from "../../layouts/Layout.astro";
 import MainColumn from "../../layouts/MainColumn.astro";
 ---
 
-<Layout title="Welcome to Astro.">
+<Layout title="License | Zerolines.js" active="License">
   <Header />
   <div class="max-w-screen-lg mx-auto lg:flex lg:space-x-12 py-12">
     <SideMenu active="License" />
     <MainColumn title="License">
       <p class="text-gray-500">
-        Zerolines.js is released under the MIT license.
+        Zerolines.js is released under the <a
+          href="https://github.com/shoyu777/zerolinesjs/blob/main/LICENSE"
+          target="_blank"
+          class="underline hover:text-gray-900">MIT</a
+        > license.
       </p>
     </MainColumn>
   </div>

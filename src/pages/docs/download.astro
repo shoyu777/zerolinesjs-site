@@ -5,7 +5,7 @@ import Layout from "../../layouts/Layout.astro";
 import MainColumn from "../../layouts/MainColumn.astro";
 ---
 
-<Layout title="Welcome to Astro.">
+<Layout title="Download | Zerolines.js" active="Download">
   <Header />
   <div class="max-w-screen-lg mx-auto lg:flex lg:space-x-12 py-12">
     <SideMenu active="Download" />
@@ -23,24 +23,27 @@ import MainColumn from "../../layouts/MainColumn.astro";
             >. Both JS and CSS files are required to work properly(CSS file is
             used for animations and other transitions).
           </p>
-          <button
-            class="transition hover:-translate-y-1 flex items-center space-x-2 border-2 border-gray-900 bg-gray-900 text-white rounded px-6 py-2"
-            ><svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke-width="1.5"
-              stroke="currentColor"
-              class="w-5 h-5"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3"
-              ></path>
-            </svg>
-            <span>Download</span>
-          </button>
+          <div>
+            <a
+              href="https://github.com/shoyu777/zerolinesjs/releases/download/0.1.0/zerolinesjs-0.1.0.zip"
+              class="w-40 transition hover:-translate-y-1 flex justify-center items-center space-x-2 border-2 border-gray-900 bg-gray-900 text-white rounded px-6 py-2"
+              ><svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="w-5 h-5"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3"
+                ></path>
+              </svg>
+              <span>Download</span>
+            </a>
+          </div>
         </div>
         <div class="space-y-6">
           <h4 class="text-gray-900 font-bold text-2xl">CDN via jsDelivr</h4>
@@ -49,10 +52,9 @@ import MainColumn from "../../layouts/MainColumn.astro";
               class="text-gray-900 font-bold">both</strong
             > links and paste it to <code>&lt;head&gt;</code> tag.
           </p>
-          <pre
-            class="w-full overflow-x-auto p-3 bg-gray-100 rounded">&lt;script src=&quot;https://cdn.jsdelivr.net/npm/zerolinesjs@0.0.5/dist/index.js&quot; integrity=&quot;sha512-Z2n2TdQoLdh5PqRRwIJmpA0fSkLDoLerIJGTJ8f8+TSytWyjtY02YMLVk2O2KjwKH1N9j0lU13ujd4NdXGz9Hw==&quot; crossorigin=&quot;anonymous&quot;&gt;&lt;/script&gt;
-&lt;link href=&quot;https://unpkg.com/zerolinesjs@0.0.5/dist/style.min.css&quot; rel=&quot;stylesheet&quot; /&gt;
-</pre>
+          <pre><code class="language-html rounded-lg">&lt;script src=&quot;https://cdn.jsdelivr.net/npm/zerolinesjs@0.1.0/dist/index.js&quot; &gt;&lt;/script&gt;
+&lt;link href=&quot;https://cdn.jsdelivr.net/npm/zerolinesjs@0.1.0/dist/core.min.css&quot; rel=&quot;stylesheet&quot; /&gt;
+</code></pre>
         </div>
       </div>
     </MainColumn>
