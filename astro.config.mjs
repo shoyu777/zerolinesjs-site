@@ -6,5 +6,4 @@ import tailwind from "@astrojs/tailwind";
 export default defineConfig({
   integrations: [tailwind()],
   site: "https://shoyu777.github.io",
-  base: "/zerolinesjs-site",
 });
