@@ -1,0 +1,23 @@
+---
+import Header from "../components/Header.astro";
+import SideMenu from "../components/SideMenu.astro";
+import Layout from "../layouts/Layout.astro";
+import MainColumn from "../layouts/MainColumn.astro";
+---
+
+<Layout title="Policy | Zerolines.js" active="Policy">
+  <Header />
+  <div class="max-w-screen-lg mx-auto lg:flex lg:space-x-12 py-12">
+    <SideMenu active="Policy" />
+    <MainColumn title="Policy">
+      <h4 class="text-gray-900 font-bold text-xl mb-3">
+        About access analysis tools
+      </h4>
+      <p>
+        This website uses "Google Analytics", an access analysis tool by Google.
+        This Google Analytics uses cookies to collect traffic data. The traffic
+        data is collected anonymously and does not identify you personally.
+      </p>
+    </MainColumn>
+  </div>
+</Layout>
